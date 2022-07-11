@@ -20,6 +20,7 @@ body{
     height: 20%;
     border-radius: 50% 50%;
     position: relative;
+    border: 10px solid white;
 
     /*Centrando*/
     display: block;
@@ -55,4 +56,10 @@ main{
     border-radius: 6% 6%;
     color: white;
     margin-bottom: 10px;
+}
+
+.boton-descarga:hover{
+    background-color: white;
+    border-color: red;
+    color: black;
 }
