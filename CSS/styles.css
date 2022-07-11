@@ -1,0 +1,58 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.borde-interno-clear{
+    border-color: white;
+}
+
+.centrar-texto{
+    position: relative;
+    text-align: center;
+}
+
+.undecorated-list{
+    list-style-type: none;
+}
+
+.imagen-perfil{
+    width: 40%;
+    height: 20%;
+    border-radius: 50% 50%;
+    position: relative;
+
+    /*Centrando*/
+    display: block;
+    margin: 0px auto;
+
+}
+
+.Menu{
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 75%;
+    bottom: 0%;
+    z-index: 2;
+    background-color: rgb(77, 102, 124);
+
+    /*Definiendo texto*/
+}
+
+main{
+    position: relative;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    left: 25%;
+    width: 75%;
+}
+
+.boton-descarga{
+    background-color: rgb(211, 6, 6);
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 6% 6%;
+    color: white;
+    margin-bottom: 10px;
+}
