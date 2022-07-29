@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Ordenada</title>
+
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/themes.css">
+
+    <style>
+        #ventana-secundaria {
+            width: 30%;
+            border-radius: 5px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body class="vermelho-primary-theme">
+    
+
+    <div class="center-listaColor vermelho-secondary-theme" id="ventana-secundaria">
+        <ol>
+            <li>Aguacáte</li>
+            <li>Arándanos</li>
+            <li>Fresas</li>
+            <li>Granada</li>
+            <li>Guanábana</li>
+            <li>Mango</li>
+            <li>Naranja</li>
+            <li>Nispero</li>
+            <li>Piña</li>
+            <li>Zapote</li>
+        </ol>
+
+        <label for="colorSeleccion">Escoja el nuevo color.</label>
+        <input type="color" name="colorSeleccion" id="colorSeleccion">
+        <span><button onclick="actualizarColor()">Actualizar</button></span>
+    </div>
+
+
+    <script>
+        var colorAnterior = '#000000';
+        function actualizarColor(){
+            //Color nuevo.
+            const colorNuevo = document.getElementById("colorSeleccion").value;
+            //Color antiguo
+            const listado = document.getElementsByTagName('li');
+            const colorAnteriorAnt = window.getComputedStyle(listado[0], 'background-color');
+            const elementColor = colorAnteriorAnt.getPropertyValue('background-color');
+            colorAnterior = elementColor;
+
+            for(i = 0; i < listado.length; i = i + 1){
+                if (i%2==0){
+                    listado[i].style.setProperty('background-color', colorNuevo);
+                }
+                else{
+                    listado[i].style.setProperty('background-color', colorAnterior);
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

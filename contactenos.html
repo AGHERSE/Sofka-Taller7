@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctenos</title>
+
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/themes.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        #formulario {
+            border-radius: 5px;
+            padding: 20px;
+            width: 40%;
+            
+        }
+    </style>
+</head>
+<body class="roxo-primary-theme">
+    
+    <div class="center roxo-secondary-theme" id="formulario">
+
+        <form class="centrar-texto">
+            <label for="name">Nombre Usuario:</label>
+            <br>
+            <input type="text" name="name" id="nombreUsuario" placeholder="Ingrese Nombre Usuario." required>
+            <br>
+            <label for="email">Correo Electrónico:</label>
+            <br>
+            <input type="text" name="email" id="correoUsuario" placeholder="Ingrese Correo Usuario." required>
+            <br>
+            <label for="asunto">Asunto:</label>
+            <br>
+            <input type="text" name="asunto" id="asuntoUsuario" placeholder="Ingrese Asunto." required>
+            <br>
+            <label for="name">Mensaje:</label>
+            <br>
+            <textarea name="mensaje" id="mensajeUsuario" cols="40" rows="10" placeholder="Ingrese aquí su mensaje" required></textarea>
+
+            <br>
+            <!--BOTONES-->
+            <input type="button" value="Enviar" class="boton-enviar" onclick="showUserDataConsole()">
+            <input type="button" value="Limpiar" class="boton-limpiar" onclick="cleanData()">
+        </form>
+    </div>
+
+
+
+
+
+    <!--SCRIPTS-->
+    <script>
+
+        function showUserDataConsole(){
+            const nombre = document.getElementById("nombreUsuario").value;
+            const email = document.getElementById("correoUsuario").value;
+            const asunto = document.getElementById("asuntoUsuario").value;
+            const mensaje = document.getElementById("mensajeUsuario").value;
+            let mensajeAcumulado = "Falta por completar: ";
+
+            if (nombre != "" &&
+            email != "" &&
+            asunto != "" &&
+            mensaje != "") {
+                console.log("Mensaje del Usuario " + nombre + "\n"
+                    + "Correo: " + email 
+                    + "\nAsunto: " + asunto
+                    + "\nMensaje: " + mensaje);
+            }
+            else {
+                if (nombre == "") {
+                    mensajeAcumulado += "nombre, ";
+                }
+                if (email == "") {
+                    mensajeAcumulado += "email, ";
+                }
+                if (asunto == "") {
+                    mensajeAcumulado += "asunto, ";
+                }
+                if (mensaje == "") {
+                    mensajeAcumulado += "mensaje. ";
+                }
+
+                alert(mensajeAcumulado);
+            }
+        }
+
+        function cleanData(){
+            document.getElementById("nombreUsuario").value = "";
+            document.getElementById("correoUsuario").value = "";
+            document.getElementById("asuntoUsuario").value = "";
+            document.getElementById("mensajeUsuario").value = "";
+        }
+    </script>
+</body>
+</html>
