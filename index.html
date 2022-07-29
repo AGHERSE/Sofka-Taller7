@@ -8,6 +8,7 @@
 
     <!--ESTILOS-->
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/themes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
@@ -15,8 +16,11 @@
     <!--Icono hoja de vida-->
     <link rel="icon" href="img/resume.png">
 </head>
-<body>
-    <div class="Menu">
+
+<body id="body" class="">
+    <script src="JS/myJs.js"></script>
+
+    <div id="Menu" class="blue-theme">
         <div class="borde-interno-clear">
             <h1 class="centrar-texto">Agustín Hernández Serpa<br></h1>
             <img src="img/Foto Perfil.png" alt="Foto Perfil" class="imagen-perfil">
@@ -25,7 +29,6 @@
                 Celular: +57 (302)-3600696
             </h2>
         </div>
-
         <h2 style="text-align: center;">Datos Personales</h2>
         <ul class="undecorated-list">
             <li>Fecha Nacimiento: 13/Enero/2001</li>
@@ -34,109 +37,227 @@
             <li>Dirección: Calle 50 #14D-91 Barrio Monteverde</li>
             <li>Correo Electrónico: agus.hdez2011@gmail.com</li>
         </ul>
+
+        <ul class="undecorated-list">
+            <li><strong>BIOMAS</strong></li>
+            <li onclick="cambiarEstilo(1)">Ver En Verde y Blanco</li>
+            <li onclick="cambiarEstilo(2)">Ver en Rojo</li>
+            <li onclick="cambiarEstilo(3)">Ver En Morado</li>
+        </ul>
     </div>
     
-   <main>
-    
-
+   <main id="main" class="">
     <h2 class="centrar-texto">Estudios Realizados</h2>
     <ul class="undecorated-list">
         <li>
-            <strong><i>Secundaria</i></strong>
-            <br>
-            Escuela Normal Superior Santa Teresita.
-            <i>Lorica, Córdoba. 2016-2018</i>
+            <div class="titulo-desplegable">
+                <strong><i>Secundaria</i></strong>
+                <span>
+                    <button class="boton-expandir" onclick="appearDissapearItems('EscuelaNormal')">&DownArrow;</button>
+                </span>
+            </div>
+            <li class="desaparecer descripcion-desplegable" id="EscuelaNormal">
+                Escuela Normal Superior Santa Teresita.
+                <i>Lorica, Córdoba. 2016-2018</i>
+            </li>
         </li>
         <li>
-            <strong><i>Otros Estudios</i></strong>
-            <br>
-            Universidad de Córdoba.
-            Ingeniería de Sistemas. VII Semestre
-            <i>Lorica, Córdoba. 2019-Presente</i>
+            <div class="titulo-desplegable">
+                <strong><i>Otros Estudios</i></strong>
+                <span>
+                    <button class="boton-expandir" onclick="appearDissapearItems('UniCor')">&DownArrow;</button>
+                </span>
+            </div>
+            <li class="desaparecer descripcion-desplegable" id="UniCor">
+                Universidad de Córdoba.
+                Ingeniería de Sistemas. VII Semestre
+                <i>Lorica, Córdoba. 2019-Presente</i>
+            </li>
+            
         </li>
     </ul>
 
     <h2 class="centrar-texto">Experiencia Laboral</h2>
     <ul class="undecorated-list">
             <li>
-                <h3>2017-2018</h3>
-                <strong>Tutor Primera Infancia</strong>
-                <ul>
-                    <li>Enseñanza a niños menores a 4 años dentro del CDI</li>
-                    <li>Cuidado de niños en el aula de clase</li>
-                    <li>Soporte para interacción de los niños.</li>
-                </ul>
+                <div class="titulo-desplegable">
+                    <strong>
+                        <i>2017-2018</i>
+                        <br>
+                        Tutor Primera Infancia
+                    </strong>
+                    <span>
+                        <button class="boton-expandir" onclick="appearDissapearItems('descripcion-CDI')">&DownArrow;</button>
+                    </span>
+                </div>
+                <li class="desaparecer descripcion-desplegable" id="descripcion-CDI">
+                    <ul class="undecorated-list">
+                        <li>Enseñanza a niños menores a 4 años dentro del CDI</li>
+                        <li>Cuidado de niños en el aula de clase</li>
+                        <li>Soporte para interacción de los niños.</li>
+                    </ul>
+                </li>
             </li>
 
-            <h3>2018-2019</h3>
-            <strong>Tutor Indepeniente </strong>
-            <ul>
-                <li>Verificación del progreso relacionado a los temas de conocimiento de los estudiantes en el área de 
-                    la informáctica y las matemáticas</li>
-                <li>Soporte para responder preguntas relacionadas con las áreas enfocadas.</li>
-                <li>Mediador para entregar recursos estudiantiles.</li>
-            </ul>
-        </li>
+            <li>
+                <div class="titulo-desplegable">
+                    <strong>
+                        <i>2018-2019</i>
+                        <br>
+                        Tutor Independiente
+                    </strong>
+                    <span>
+                        <button class="boton-expandir" onclick="appearDissapearItems('descripcion-Tutor-Independiente')">&DownArrow;</button>
+                    </span>
+                </div>
+                <li class="desaparecer descripcion-desplegable" id="descripcion-Tutor-Independiente">
+                    <ul class="undecorated-list">
+                        <li>Verificación del progreso relacionado a los temas de conocimiento de los estudiantes en el área de 
+                            la informáctica y las matemáticas</li>
+                        <li>Soporte para responder preguntas relacionadas con las áreas enfocadas.</li>
+                        <li>Mediador para entregar recursos estudiantiles.</li>
+                    </ul>
+                </li>
+            </li>
 
-        <li>
-            <h3>2020-Presente</h3>
-            <strong>Agricultor Independiente</strong>
-            <ul>
-                <li>Verificación del estado del cultivo</li>
-                <li>Manejo del inventario de ventas del cultivo</li>
-                <li>Control del ingresos y gastos de cultivos.</li>
-            </ul>
-        </li>
-    </ul>
+            <li>
+                <div class="titulo-desplegable">
+                    <strong>
+                        <i>2020-Presente</i>
+                        <br>
+                        Agricultor Independiente
+                    </strong>
+                    <span>
+                        <button class="boton-expandir" onclick="appearDissapearItems('descripcion-Agricultor-Independiente')">&DownArrow;</button>
+                    </span>
+                </div>
+                <li class="desaparecer descripcion-desplegable" id="descripcion-Agricultor-Independiente">
+                    <ul class="undecorated-list">
+                        <li>Verificación del estado del cultivo</li>
+                        <li>Manejo del inventario de ventas del cultivo</li>
+                        <li>Control del ingresos y gastos de cultivos.</li>
+                    </ul>
+                </li>
+            </li>
 
     <h2 class="centrar-texto">Referencias Personales</h2>
-    <ul class="undecorated-list">
-        <li style="margin-bottom: 4px;">
-            <strong>Tobias Alfonso Parody</strong>
-            <br>
-            Independiente. Montería, Córdoba.<br>
-            Teléfono: 3146751346
+    
+    
+
+    <!--REFERENCIAS PERSONALES-->
+    <li>
+        <div class="titulo-desplegable">
+            <strong>
+                <i>Tobias Alfonso Parody</i>
+            </strong>
+            <span>
+                <button class="boton-expandir" onclick="appearDissapearItems('Tobias-Parody')">&DownArrow;</button>
+            </span>
+        </div>
+        <li class="desaparecer descripcion-desplegable" id="Tobias-Parody">
+            <ul class="undecorated-list">
+                <li>Independiente. Montería, Córdoba.</li>
+                <li>Teléfono: 3146751346</li>
+            </ul>
         </li>
-        <li style="margin-bottom: 4px;">
-            <strong>Valentina Henao Ramírez</strong>
-            <br>
-            Independiente. Montería, Córdoba.<br>
-            Telefono: 3132686693
+    </li>
+
+    <li>
+        <div class="titulo-desplegable">
+            <strong>
+                <i>Valentina Henao Ramírez</i>
+            </strong>
+            <span>
+                <button class="boton-expandir" onclick="appearDissapearItems('Valentina-Ramirez')">&DownArrow;</button>
+            </span>
+        </div>
+        <li class="desaparecer descripcion-desplegable" id="Valentina-Ramirez">
+            <ul class="undecorated-list">
+                <li>Independiente. Montería, Córdoba.</li>
+                <li>Telefono: 3132686693</li>
+            </ul>
         </li>
-        <li style="margin-bottom: 4px;">
-            <strong>Camilo Bonilla</strong>
-            <br>
-            Independiente. Cali, Valle del Cauca.<br>
-            Teléfono: 3015720411
+    </li>
+
+    <li>
+        <div class="titulo-desplegable">
+            <strong>
+                <i>Camilo Alejandro Bonilla Murillo</i>
+            </strong>
+            <span>
+                <button class="boton-expandir" onclick="appearDissapearItems('Camilo-Bonilla')">&DownArrow;</button>
+            </span>
+        </div>
+        <li class="desaparecer descripcion-desplegable" id="Camilo-Bonilla">
+            <ul class="undecorated-list">
+                <li>Independiente. Cali, Valle del Cauca.</li>
+                <li>Teléfono: 3015720411</li>
+            </ul>
         </li>
-    </ul>
+    </li>
+
+
+
+    <!--REFERENCIAS FAMILIARES-->
 
     <h2 class="centrar-texto">Referencias Familiares</h2>
-    <ul class="undecorated-list">
-        <li style="margin-bottom: 4px;">
-            <strong>Luisa Hernández Serpa</strong>
-            <br>
-            Estudiante. Montería, Córdoba.<br>
-            Teléfono: 3004222794
+
+    <li>
+        <div class="titulo-desplegable">
+            <strong>
+                <i>Luisa Hernández Serpa</i>
+            </strong>
+            <span>
+                <button class="boton-expandir" onclick="appearDissapearItems('Luisa-Hernandez')">&DownArrow;</button>
+            </span>
+        </div>
+        <li class="desaparecer descripcion-desplegable" id="Luisa-Hernandez">
+            <ul class="undecorated-list">
+                <li>Estudiante. Montería, Córdoba.</li>
+                <li>Teléfono: 3004222794</li>
+            </ul>
         </li>
-        <li style="margin-bottom: 4px;">
-            <strong>Agustín Hernández López</strong>
-            <br>
-            Independiente. Lorica, Córdoba.<br>
-            Teléfono: 3005350815
+    </li>
+
+    <li>
+        <div class="titulo-desplegable">
+            <strong>
+                <i>Agustín Hernández López</i>
+            </strong>
+            <span>
+                <button class="boton-expandir" onclick="appearDissapearItems('Agustin-Hernandez')">&DownArrow;</button>
+            </span>
+        </div>
+        <li class="desaparecer descripcion-desplegable" id="Agustin-Hernandez">
+            <ul class="undecorated-list">
+                <li>Independiente. Lorica, Córdoba.</li>
+                <li>Teléfono: 3005350815</li>
+            </ul>
         </li>
-        <li style="margin-bottom: 4px;">
-            <strong>Andrés Álvarez Serpa</strong>
-            <br>
-            Independiente. Bogotá D.C.<br>
-            Teléfono: 3203136934
+    </li>
+
+    <li>
+        <div class="titulo-desplegable">
+            <strong>
+                <i>Andrés Álvarez Serpa</i>
+            </strong>
+            <span>
+                <button class="boton-expandir" onclick="appearDissapearItems('Andres-Alvarez')">&DownArrow;</button>
+            </span>
+        </div>
+        <li class="desaparecer descripcion-desplegable" id="Andres-Alvarez">
+            <ul class="undecorated-list">
+                <li>Psicólogo. Bogotá D.C.</li>
+                <li>Teléfono: 3203136934</li>
+            </ul>
         </li>
-    </ul>
+    </li>
 
     <p style="text-align: center;">
         <a href="Hoja de Vida.pdf" download="Hoja de Vida Agustín Hernández Serpa.pdf" class="boton-descarga">Descargar PDF</a>
     </p>
     
    </main>
+
 </body>
 </html>

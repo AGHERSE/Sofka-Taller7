@@ -1,0 +1,39 @@
+/*Tema Principal*/
+.blue-theme {
+    background-color: rgb(77, 102, 124);
+}
+/*Primer tema*/
+.roxo-primary-theme {
+    background-color: rgb(74, 9, 107);
+    color: white;
+}
+
+.roxo-secondary-theme {
+    background-color: rgb(189, 90, 238);
+    color: white;
+}
+
+/*Segundo Tema*/
+.vermelho-primary-theme {
+    background-color: rgb(106, 42, 40);
+    color: white;
+}
+
+.vermelho-secondary-theme {
+    background-color: rgb(235, 94, 89);
+    color: white;
+}
+/*Tercer Tema*/
+.verde-theme {
+    background-color: rgb(45, 184, 3);
+    color: white;
+}
+
+.branco-theme{
+    background-color: white;
+    color: black;
+}
+
+.desaparecer {
+    display: none;
+}
